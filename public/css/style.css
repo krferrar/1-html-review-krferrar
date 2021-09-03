@@ -1,9 +1,3 @@
-/* * Use [Bootstrap (>= v4)][bootstrap] on all pages. On all pages, also include a custom style sheet that overrides *at least* the following Bootstrap defaults: background color, text color, header color, link color. */
-
-/* * In your custom CSS file, also write at least one declaration for an element by CSS class and one declaration for an element by id. Use those elements in your pages. */
-
-/* * The pages should include at least two images (overall). Show the image thumbnails on the page. Link the thumbnails to larger versions of the same images. Include citation or attribution for each image. (This is _**NOT**_ `alt` text, and should be visible to anyone viewing the page.) */
-
 
 body{background-color:lavenderblush;}
 /* header{background-color: indianred;} */
@@ -14,4 +8,7 @@ li{color: midnightblue;}
 .link{color: orchid;}
 
 .title{font-family: Arial, Helvetica, sans-serif;}
-#header{color: midnightblue;}
+nav{background-color: lightsteelblue;}
+#bold{font-weight: bold;}
+
+.source{font-size: x-small;}
