@@ -32,24 +32,33 @@
       </div>
     </nav>
   </header>
+  <div id="app">
+
+
+  
   <div class="container">
     <div class="row">
-      <h1 class="title" ><div class="col-9">Jennifer Lopez</div></h1>
+      <h1 class="title" ><div class="col-9">{{person.name.first}} {{person.name.last}}</div></h1>
       <div class="col-4">
-        <a href= "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgwMTgyMjU4NjIyMTQ1ODgw/gettyimages-469873772.jpg"><img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgwMTgyMjU4NjIyMTQ1ODgw/gettyimages-469873772.jpg" class="img-thumbnail" alt="Picture of JLO"></a></div>
+        <a v-bind:href= "person.picture.large"><img class="img-thumbnail" v-bind:src="person.picture.large"></a></div>
       <div class="col-6"><h2 class=title>About Me</h2>
         <br>
-        <p id="bold">Hometown: Los Angeles, California</p>
-        <p id="bold">Birth Date: June 7, 1972</p>
-        <p id="bold">Age: 49</p>
-        <p id="bold">Email:<a class=link href=mailto:>jlo12@hotmail.com</a></p>
+        <p id="bold">Home Country: {{person.location.country}}</p>
+        <p id="bold">Birth Date: {{prettyBirthday}} </p>
+        <p id="bold">Age: {{person.registered.age}}</p>
+        <p id="bold">Email:<a class=link href=mailto:>{{person.email}}</a></p>
       </div>
     </div>
   </div>
+
+
+</div>
   <footer>
       <p class="source">Source: https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgwMTgyMjU4NjIyMTQ1ODgw/gettyimages-469873772.jpg </p>
   </footer>
 
   <script src="js/tablesort.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 </body>
 </html>
