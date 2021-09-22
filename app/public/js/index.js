@@ -11,10 +11,8 @@ const Person1 = {
             .format('D MMM YYYY')
         }
     },
-   
-   
-        created() {
-    
+    methods: {
+        fetchUserData() {
             fetch('https://randomuser.me/api/')
             .then(response => response.json())
             .then((parsedJson) => {console.log(parsedJson);
@@ -26,6 +24,12 @@ const Person1 = {
             })
     
             console.log("B");
+        }
+    },
+   
+        created() {
+    
+           this.fetchUserData();
         }
       }
     

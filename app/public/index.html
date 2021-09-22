@@ -43,6 +43,9 @@
         <a v-bind:href= "person.picture.large"><img class="img-thumbnail" v-bind:src="person.picture.large"></a></div>
       <div class="col-6"><h2 class=title>About Me</h2>
         <br>
+        <form v-on:submit.prevent="fetchUserData">
+          <button type="submit">Reload</button>
+        </form>
         <p id="bold">Home Country: {{person.location.country}}</p>
         <p id="bold">Birth Date: {{prettyBirthday}} </p>
         <p id="bold">Age: {{person.registered.age}}</p>
