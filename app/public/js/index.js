@@ -1,7 +1,7 @@
 const Book1 = {
     data() {
       return {
-        students: [],
+        books: [],
         selectedStudent: null,
         offers: []
       }
@@ -25,19 +25,17 @@ const Book1 = {
         //    this.offers = [];
          //   this.fetchOfferData(this.selectedStudent);
         //},
-        fetchBookData() {
-            fetch('/api/books/')
-            .then( response => response.json() )
-            .then( (responseJson) => {
-                console.log(responseJson);
-                this.books = responseJson;
-            })
-            .catch( (err) => {
-                console.error(err);
-            });
-        
-         
-        }
+        fetchBooksData() {
+          fetch('/api/books/')
+          .then( response => response.json() )
+          .then( (responseJson) => {
+              console.log(responseJson);
+              this.books = responseJson;
+          })
+          .catch( (err) => {
+              console.error(err);
+          })
+      }
     },
     created() {
         this.fetchBooksData();
