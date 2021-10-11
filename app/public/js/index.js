@@ -13,10 +13,10 @@ const Book1 = {
        //     return dayjs(d)
          //   .format('D MMM YYYY')
       //  },
-      //  prettyDollar(n) {
-      //      const d = new Intl.NumberFormat("en-US").format(n);
-      //      return "$ " + d;
-      //  },
+       prettyDollar(n) {
+           const d = new Intl.NumberFormat("en-US").format(n);
+           return "$ " + d;
+       },
        // selectStudent(s) {
        //     if (s == this.selectedStudent) {
        //         return;
