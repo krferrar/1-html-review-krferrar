@@ -1,38 +1,49 @@
-const Person1 = {
+const Book1 = {
     data() {
       return {
-        "person": undefined
-        }
-    },
-    computed: {
-        prettyBirthday() {
-            return dayjs(this.person.dob.date)
-            .format('D MMM YYYY')
-        }
-    },
-    methods: {
-        fetchUserData() {
-            fetch('https://randomuser.me/api/')
-            .then(response => response.json())
-            .then((parsedJson) => {console.log(parsedJson);
-                this.person = parsedJson.results[0];
-                
-            })
-            .catch( err => {
-                console.error(err)
-            })
-    
-            console.log("B");
-        }
-    },
-   
-        created() {
-    
-           this.fetchUserData();
-        }
+        students: [],
+        selectedStudent: null,
+        offers: []
       }
-    
+    },
+    computed: {},
+    methods: {
+       
+      //  prettyData(d) {
+       //     return dayjs(d)
+         //   .format('D MMM YYYY')
+      //  },
+      //  prettyDollar(n) {
+      //      const d = new Intl.NumberFormat("en-US").format(n);
+      //      return "$ " + d;
+      //  },
+       // selectStudent(s) {
+       //     if (s == this.selectedStudent) {
+       //         return;
+        //    }
+       //     this.selectedStudent = s;
+        //    this.offers = [];
+         //   this.fetchOfferData(this.selectedStudent);
+        //},
+        fetchBookData() {
+            fetch('/api/books/')
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            });
+        
+         
+        }
+    },
+    created() {
+        this.fetchBooksData();
+    }
   
+  }
   
-Vue.createApp(Person1).mount('#app');
+  Vue.createApp(Book1).mount('#bookApp');
 
