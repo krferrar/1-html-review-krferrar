@@ -2,8 +2,8 @@ const Book1 = {
     data() {
       return {
         books: [],
-        selectedStudent: null,
-        offers: []
+        selectedBook: null,
+        bookForm: {}
       }
     },
     computed: {},
@@ -17,14 +17,14 @@ const Book1 = {
            const d = new Intl.NumberFormat("en-US").format(n);
            return "$ " + d;
        },
-       // selectStudent(s) {
-       //     if (s == this.selectedStudent) {
-       //         return;
-        //    }
-       //     this.selectedStudent = s;
-        //    this.offers = [];
-         //   this.fetchOfferData(this.selectedStudent);
-        //},
+      selectBook(s) {
+           if (b == this.selectedBook) {
+                return;
+            }
+            this.selectedBook = b;
+            this.books = [];
+           this.fetchBooksData(this.selectedBook);
+        },
         fetchBooksData() {
           fetch('/api/books/')
           .then( response => response.json() )
@@ -34,9 +34,32 @@ const Book1 = {
           })
           .catch( (err) => {
               console.error(err);
-          })
-      }
+          });
     },
+    postNewBook(evt) {
+      //this.bookForm.bookId = this.selectedBook.id;        
+      
+      console.log("Posting!", this.bookForm);
+
+      fetch('api/books/create.php', {
+          method:'POST',
+          body: JSON.stringify(this.bookForm),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          // TODO: test a result was returned!
+          this.offers = json;
+          
+          // reset the form
+          this.offerForm = {};
+        });
+    }
+},
+      
     created() {
         this.fetchBooksData();
     }
