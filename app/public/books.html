@@ -58,8 +58,8 @@
                 <td>{{ b.pages }}</td>
                 <td>{{ prettyDollar(b.price) }}</td>
                 <td>
-                  <button type="button" v-on:click="handleEditBook(book)" class="btn btn-outline-secondary btn-sm">Edit</button>
-                  <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-outline-secondary btn-sm">Delete</button>
+                  <button type="button" v-on:click="handleEditBook(b)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                  <button type="button" v-on:click="postDeleteBook(b)" class="btn btn-outline-secondary btn-sm">Delete</button>
                 </td>
 
             </tr>
@@ -105,10 +105,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   <script src="js/index.js"></script>
-  <script src="js/tablesort.min.js"></script>
-  <script>
+  <!-- <script src="js/tablesort.min.js"></script> -->
+  <!-- <script>
     //tablesort plug in from https://github.com/tristen/tablesort/blob/gh-pages/tablesort.css
     new Tablesort(document.getElementById('taskTable'));
-  </script>
+  </script> -->
 </body>
 </html>

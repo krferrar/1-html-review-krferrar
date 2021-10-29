@@ -40,9 +40,9 @@ const Book1 = {
       this.bookForm.id = this.selectedBook.id;
       //this.bookForm.studentId = this.selectedStudent.id;        
       
-      console.log("Editing!", this.offerBook);
+      console.log("Editing!", this.bookForm);
 
-      fetch('api/book/update.php', {
+      fetch('api/books/update.php', {
           method:'POST',
           body: JSON.stringify(this.bookForm),
           headers: {
